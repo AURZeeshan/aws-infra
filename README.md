@@ -22,7 +22,7 @@ This repository contains Terraform scripts to set up a basic web application inf
 1. **Navigate to the Terraform directory**:
 
     ```sh
-    cd terraform
+    cd aws-infra
     ```
 
 2. **Initialize Terraform**:
