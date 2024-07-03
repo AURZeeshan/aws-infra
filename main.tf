@@ -189,8 +189,9 @@ resource "aws_db_instance" "main" {
   vpc_security_group_ids  = [aws_security_group.db_sg.id]
   username                = "admin"
   password                = "password"
-  parameter_group_name    = "default.mysql8.0"
+  parameter_group_name    = aws_db_parameter_group.custom_mysql8.name
   publicly_accessible     = false
   skip_final_snapshot     = true
 }
+
 
