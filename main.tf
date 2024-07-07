@@ -119,11 +119,9 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
                 #!/bin/bash
-                sudo yum update -y
-                sudo amazon-linux-extras install nginx1.12 -y
-                sudo systemctl start nginx
-                sudo systemctl enable nginx
-                echo "Hello, World" > /usr/share/nginx/html/index.html
+                sudo apt-get update
+                sudo apt-get install -y docker.io
+                sudo docker run -d -p 3306:3306 my-docker-hub-account/mysql:latest
                 EOF
 
   tags = {
